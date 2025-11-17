@@ -12,7 +12,7 @@ class SplashViewBody extends StatelessWidget {
       crossAxisAlignment: .stretch,
       children: <Widget>[
         SvgPicture.asset(
-          alignment: Alignment.topLeft,
+          alignment: .topLeft,
           Assets.imagesPlant,
         ),
         SvgPicture.asset(
@@ -20,7 +20,7 @@ class SplashViewBody extends StatelessWidget {
         ),
         SvgPicture.asset(
           Assets.imagesSplashBottom,
-          fit: BoxFit.fill,
+          fit: .fill,
         ),
       ],
     );

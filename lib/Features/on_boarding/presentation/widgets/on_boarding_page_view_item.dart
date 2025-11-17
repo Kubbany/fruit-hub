@@ -3,7 +3,11 @@ import 'package:fruit_hub/Features/on_boarding/domain/entities/on_boarding_item_
 import 'package:svg_flutter/svg.dart';
 
 class OnBoardingPageViewItem extends StatelessWidget {
-  const OnBoardingPageViewItem({super.key, required this.onBoardingItem, required this.index});
+  const OnBoardingPageViewItem({
+    super.key,
+    required this.onBoardingItem,
+    required this.index,
+  });
   final OnBoardingItemEntity onBoardingItem;
   final int index;
   @override
@@ -11,14 +15,14 @@ class OnBoardingPageViewItem extends StatelessWidget {
     return Column(
       children: <Widget>[
         SizedBox(
-          width: double.infinity,
+          width: .infinity,
           height: MediaQuery.sizeOf(context).height * 0.5,
           child: Stack(
             children: <Widget>[
               Positioned.fill(
                 child: SvgPicture.asset(
                   onBoardingItem.backgroundImage,
-                  fit: BoxFit.fill,
+                  fit: .fill,
                 ),
               ),
               Positioned(
@@ -32,7 +36,7 @@ class OnBoardingPageViewItem extends StatelessWidget {
               Visibility(
                 visible: index == 0 ? true : false,
                 child: const Padding(
-                  padding: EdgeInsets.symmetric(
+                  padding: .symmetric(
                     horizontal: 16,
                     vertical: 32,
                   ),
@@ -45,6 +49,28 @@ class OnBoardingPageViewItem extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ),
+        const SizedBox(
+          height: 64.0,
+        ),
+        onBoardingItem.title,
+        const SizedBox(
+          height: 24,
+        ),
+        Padding(
+          padding: const .symmetric(
+            horizontal: 37,
+          ),
+          child: Text(
+            onBoardingItem.subtitle,
+            style: const TextStyle(
+              fontSize: 13,
+              fontWeight: .w600,
+              fontFamily: 'Cairo',
+              color: Color(0xFF4E5556),
+            ),
+            textAlign: .center,
           ),
         ),
       ],
