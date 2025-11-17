@@ -94,6 +94,6 @@ flutter_launcher_icons:
     theme_color: "#FFFFFF"
 flutter_assets:
   assets_path: assets/images/
-  output_path: lib/utils/
+  output_path: lib/Core/utils/
   filename: assets.dart
   field_prefix:

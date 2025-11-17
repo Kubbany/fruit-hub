@@ -1,0 +1,15 @@
+import 'package:flutter/material.dart';
+import 'package:fruit_hub/Core/utils/constants/strings.dart';
+import 'package:fruit_hub/Features/on_boarding/presentation/widgets/on_boarding_view_body.dart';
+
+class OnBoardingView extends StatelessWidget {
+  const OnBoardingView({super.key});
+  static const String routeName = kOnBoardingView;
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: OnBoardingViewBody(),
+    );
+  }
+}
