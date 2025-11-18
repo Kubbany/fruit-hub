@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/Core/services/prefs.dart';
 import 'package:fruit_hub/Core/utils/constants/strings.dart';
+import 'package:fruit_hub/Features/auth/presentation/view/login_view.dart';
 import 'package:fruit_hub/Features/on_boarding/presentation/view/on_boarding_view.dart';
 import 'package:fruit_hub/Features/splash/presentation/widgets/splash_view_body.dart';
 
@@ -15,7 +17,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    _navigateToOnBoardingView();
+    _executeNavigation();
   }
 
   @override
@@ -26,12 +28,17 @@ class _SplashViewState extends State<SplashView> {
     );
   }
 
-  Future<Null> _navigateToOnBoardingView() {
+  Future<Null> _executeNavigation() {
     return Future<Null>.delayed(
       const Duration(seconds: 2),
       () {
         if (mounted) {
-          Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
+          bool skipOnBoarding = Prefs.getBool(AppStrings.skipOnBoarding);
+          if (skipOnBoarding) {
+            Navigator.pushReplacementNamed(context, LoginView.routeName);
+          } else {
+            Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
+          }
         }
       },
     );

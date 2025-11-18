@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/Core/services/prefs.dart';
 import 'package:fruit_hub/Core/utils/app_text_styles.dart';
+import 'package:fruit_hub/Core/utils/constants/strings.dart';
+import 'package:fruit_hub/Features/auth/presentation/view/login_view.dart';
 import 'package:fruit_hub/Features/on_boarding/domain/entities/on_boarding_item_entity.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -43,10 +46,16 @@ class OnBoardingPageViewItem extends StatelessWidget {
                   ),
                   child: Align(
                     alignment: AlignmentDirectional.topStart,
-                    child: Text(
-                      'تخط',
-                      style: TextStyles.regular13.copyWith(
-                        color: const Color(0xFF949D9E),
+                    child: TextButton(
+                      onPressed: () {
+                        Prefs.setBool(AppStrings.skipOnBoarding, true);
+                        Navigator.pushReplacementNamed(context, LoginView.routeName);
+                      },
+                      child: Text(
+                        'تخط',
+                        style: TextStyles.regular13.copyWith(
+                          color: const Color(0xFF949D9E),
+                        ),
                       ),
                     ),
                   ),

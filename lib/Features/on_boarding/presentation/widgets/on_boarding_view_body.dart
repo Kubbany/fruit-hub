@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/Core/services/prefs.dart';
 import 'package:fruit_hub/Core/utils/constants/colors.dart';
+import 'package:fruit_hub/Core/utils/constants/strings.dart';
 import 'package:fruit_hub/Core/utils/widgets/custom_button.dart';
 import 'package:fruit_hub/Core/utils/widgets/custom_dots_indicator.dart';
+import 'package:fruit_hub/Features/auth/presentation/view/login_view.dart';
 import 'package:fruit_hub/Features/on_boarding/domain/entities/on_boarding_item_entity.dart';
 import 'package:fruit_hub/Features/on_boarding/presentation/widgets/on_boarding_page_view_builder.dart';
 
@@ -60,7 +63,10 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             maintainSize: true,
             maintainState: true,
             child: CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                Prefs.setBool(AppStrings.skipOnBoarding, true);
+                Navigator.pushReplacementNamed(context, LoginView.routeName);
+              },
               text: 'ابدأ الآن',
             ),
           ),
