@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/Core/utils/app_text_styles.dart';
 import 'package:fruit_hub/Core/utils/assets.dart';
+import 'package:fruit_hub/Core/utils/constants/colors.dart';
 
 class OnBoardingItemEntity {
   final String backgroundImage, image, subtitle;
@@ -12,19 +14,35 @@ class OnBoardingItemEntity {
     required this.subtitle,
   });
 
-  static const List<OnBoardingItemEntity> items = <OnBoardingItemEntity>[
+  static List<OnBoardingItemEntity> items = <OnBoardingItemEntity>[
     OnBoardingItemEntity(
       backgroundImage: Assets.imagesPageViewItem1BackgroundImage,
       image: Assets.imagesPageViewItem1Image,
       subtitle:
           'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
-      title: Row(
-        mainAxisAlignment: .center,
-        children: <Widget>[
-          Text('مرحبًا بك في'),
-          Text(' HUB'),
-          Text('Fruit'),
-        ],
+      title: Text.rich(
+        TextSpan(
+          children: <TextSpan>[
+            TextSpan(
+              text: 'مرحباً بك في ',
+              style: TextStyles.bold23.copyWith(
+                color: AppColors.headerColor,
+              ),
+            ),
+            TextSpan(
+              text: 'Fruit',
+              style: TextStyles.bold23.copyWith(
+                color: AppColors.primaryColor,
+              ),
+            ),
+            TextSpan(
+              text: 'HUB',
+              style: TextStyles.bold23.copyWith(
+                color: const Color(0xFFF4A91F),
+              ),
+            ),
+          ],
+        ),
       ),
     ),
     OnBoardingItemEntity(
@@ -34,12 +52,8 @@ class OnBoardingItemEntity {
           'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
       title: Text(
         'ابحث وتسوق',
-        style: TextStyle(
-          fontSize: 23,
-          color: Color(0xFF0C0D0D),
-          fontFamily: 'Cairo',
-          fontWeight: .w700,
-          height: 0,
+        style: TextStyles.bold23.copyWith(
+          color: AppColors.headerColor,
         ),
       ),
     ),

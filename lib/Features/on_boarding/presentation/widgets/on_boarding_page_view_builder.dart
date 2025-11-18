@@ -9,6 +9,7 @@ class OnBoardingPageViewBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView.builder(
       controller: pageController,
+      physics: const BouncingScrollPhysics(),
       itemBuilder: (BuildContext context, int index) => OnBoardingPageViewItem(
         onBoardingItem: OnBoardingItemEntity.items[index],
         index: index,

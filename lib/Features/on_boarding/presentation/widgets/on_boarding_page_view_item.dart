@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/Core/utils/app_text_styles.dart';
 import 'package:fruit_hub/Features/on_boarding/domain/entities/on_boarding_item_entity.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -35,8 +36,8 @@ class OnBoardingPageViewItem extends StatelessWidget {
               ),
               Visibility(
                 visible: index == 0 ? true : false,
-                child: const Padding(
-                  padding: .symmetric(
+                child: Padding(
+                  padding: const .symmetric(
                     horizontal: 16,
                     vertical: 32,
                   ),
@@ -44,6 +45,9 @@ class OnBoardingPageViewItem extends StatelessWidget {
                     alignment: AlignmentDirectional.topStart,
                     child: Text(
                       'تخط',
+                      style: TextStyles.regular13.copyWith(
+                        color: const Color(0xFF949D9E),
+                      ),
                     ),
                   ),
                 ),
@@ -64,11 +68,8 @@ class OnBoardingPageViewItem extends StatelessWidget {
           ),
           child: Text(
             onBoardingItem.subtitle,
-            style: const TextStyle(
-              fontSize: 13,
-              fontWeight: .w600,
-              fontFamily: 'Cairo',
-              color: Color(0xFF4E5556),
+            style: TextStyles.semiBold13.copyWith(
+              color: const Color(0xFF4E5556),
             ),
             textAlign: .center,
           ),

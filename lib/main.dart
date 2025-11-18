@@ -19,6 +19,7 @@ class FruitHub extends StatelessWidget {
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,
       theme: ThemeData(
+        fontFamily: 'Cairo',
         scaffoldBackgroundColor: Colors.white,
       ),
       localizationsDelegates: <LocalizationsDelegate<dynamic>>[
