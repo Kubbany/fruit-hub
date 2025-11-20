@@ -6,6 +6,7 @@ import 'package:fruit_hub/Features/auth/presentation/view/register_view.dart';
 import 'package:fruit_hub/Features/auth/presentation/widgets/auth_action_dialogue.dart';
 import 'package:fruit_hub/Features/auth/presentation/widgets/forgot_password.dart';
 import 'package:fruit_hub/Features/auth/presentation/widgets/or_divider_widget.dart';
+import 'package:fruit_hub/Features/auth/presentation/widgets/social_login_actions.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -54,6 +55,10 @@ class LoginViewBody extends StatelessWidget {
             height: 49,
           ),
           const OrDividerWidget(),
+          const SizedBox(
+            height: 31,
+          ),
+          const SocialLoginActions(),
         ],
       ),
     );
