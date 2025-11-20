@@ -23,12 +23,7 @@ class OnBoardingItemEntity {
       title: Text.rich(
         TextSpan(
           children: <TextSpan>[
-            TextSpan(
-              text: 'مرحباً بك في ',
-              style: TextStyles.bold23.copyWith(
-                color: AppColors.headerColor,
-              ),
-            ),
+            const TextSpan(text: 'مرحباً بك في ', style: TextStyles.bold23),
             TextSpan(
               text: 'Fruit',
               style: TextStyles.bold23.copyWith(
@@ -45,16 +40,14 @@ class OnBoardingItemEntity {
         ),
       ),
     ),
-    OnBoardingItemEntity(
+    const OnBoardingItemEntity(
       backgroundImage: Assets.imagesPageViewItem2BackgroundImage,
       image: Assets.imagesPageViewItem2Image,
       subtitle:
           'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
       title: Text(
         'ابحث وتسوق',
-        style: TextStyles.bold23.copyWith(
-          color: AppColors.headerColor,
-        ),
+        style: TextStyles.bold23,
       ),
     ),
   ];
