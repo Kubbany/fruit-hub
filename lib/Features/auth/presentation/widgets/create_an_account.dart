@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/Core/utils/app_text_styles.dart';
+import 'package:fruit_hub/Features/auth/presentation/view/register_view.dart';
 
 class CreateAnAccount extends StatelessWidget {
   const CreateAnAccount({
@@ -25,7 +26,7 @@ class CreateAnAccount extends StatelessWidget {
             ),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                Navigator.pushNamed(context, '/register');
+                Navigator.pushNamed(context, RegisterView.routeName);
               },
           ),
         ],
