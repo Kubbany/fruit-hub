@@ -21,7 +21,7 @@ class RegisterView extends StatelessWidget {
           ),
         ),
         title: const Text(
-          'تسجيل دخول',
+          'حساب جديد',
           style: TextStyles.bold19,
         ),
         centerTitle: true,
